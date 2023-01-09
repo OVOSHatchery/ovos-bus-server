@@ -34,5 +34,7 @@ include_directories(SYSTEM "${PROJECT_SOURCE_DIR}/external")
 add_library(jsoncpp STATIC ${PROJECT_SOURCE_DIR}/external/jsoncpp.cpp)
 
 # Build the server executable
-add_executable(ovos-bus-server server.cpp WebsocketServer.cpp)
-target_link_libraries (ovos-bus-server jsoncpp)
+set(TARGET ovos-bus-server)
+add_executable(${TARGET} server.cpp WebsocketServer.cpp)
+target_link_libraries (${TARGET} jsoncpp)
+install(TARGETS ${TARGET} DESTINATION bin)
