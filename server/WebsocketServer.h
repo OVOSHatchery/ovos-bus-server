@@ -24,7 +24,7 @@ class WebsocketServer
 {
 public:
 	WebsocketServer();
-	void run(int port);
+	void run(int port, bool reuse);
 
 	// Returns the number of currently connected clients
 	size_t numConnections();

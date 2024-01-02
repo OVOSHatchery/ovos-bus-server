@@ -6,6 +6,7 @@
 
 // The port number the WebSocket server listens on
 #define PORT_NUMBER 8181
+#define REUSE_ADDR true
 
 int main(int argc, char *argv[])
 {
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
 
 	// Start the networking thread
 	std::thread serverThread([&server]()
-							 { server.run(PORT_NUMBER); });
+							 { server.run(PORT_NUMBER, REUSE_ADDR); });
 
 	// Start the event loop for the main thread
 	asio::io_service::work work(mainEventLoop);

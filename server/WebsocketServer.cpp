@@ -33,9 +33,10 @@ WebsocketServer::WebsocketServer()
 	this->endpoint.init_asio(&(this->eventLoop));
 }
 
-void WebsocketServer::run(int port)
+void WebsocketServer::run(int port, bool reuse)
 {
 	// Listen on the specified port number and start accepting connections
+	this->endpoint.set_reuse_addr(reuse);
 	this->endpoint.listen(port);
 	this->endpoint.start_accept();
 
