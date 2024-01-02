@@ -1,11 +1,9 @@
-OVOS Bus Server
-=========================
+# OVOS Bus Server
 
 Alternative C++ messagebus server implementation for ovos-core using
 the [WebSocket++](https://github.com/zaphoyd/websocketpp) WebSocket library.
 
-Dependencies
-------------
+## Dependencies
 
 The following libraries are bundled in the source tree, under the `server/external` directory:
 
@@ -18,9 +16,7 @@ a bug in MinGW that prevents WebSocket++ from using C++11 functionality alone (
 see [this StackOverflow post](http://stackoverflow.com/questions/33662788/undefined-reference-to-stderrcoperation-canceled-when-compiling-websocketp)
 for details.)
 
-
-Building the server
--------------------
+## Building the server
 
 Building the server requires a recent version of the [CMake](https://cmake.org/) build system. To build the server,
 invoke the following commands in the `server` directory:
@@ -30,13 +26,10 @@ cmake .
 cmake --build .
 ```
 
-When compiling with Visual Studio under Windows, these command need to be run from the *"Visual Studio Native Tools
-Command Prompt"*, which includes the neccessary build tools in the `PATH`.
+When compiling with Visual Studio under Windows, these command need to be run from the _"Visual Studio Native Tools
+Command Prompt"_, which includes the neccessary build tools in the `PATH`.
 
-
-
-License
--------
+## License
 
 The bundled libraries are each covered by their own licenses:
 
@@ -46,8 +39,6 @@ The bundled libraries are each covered by their own licenses:
 
 All of the remaining code is licensed under the MIT License. See the file `LICENSE` for details.
 
-Credits
--------
+## Credits
 
 Based of https://github.com/adamrehn/websocket-server-demo
-
