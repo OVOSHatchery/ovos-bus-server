@@ -128,6 +128,8 @@ void WebsocketServer::onMessage(ClientConnection conn, WebsocketEndpoint::messag
 	Json::Value messageObject = WebsocketServer::parseJson(msg->get_payload());
 	if (messageObject.isNull() == false)
 	{
+		std::lock_guard<std::mutex> lock(this->connectionListMutex);
+		
 		// If any handlers are registered invoke them
 		for (auto handler : this->messageHandlers)
 		{
